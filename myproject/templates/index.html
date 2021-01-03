@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pub Street</title>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fd791e4a0c.js" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/flat-icons.com/flat/24/Beer-icon.png">
+    <link href="/static/main.css?v=0.0.1" rel="stylesheet">
+
+    <script>
+        $(document).ready(function () {
+            // index.html 로드가 완료되면 자동으로 showStar() 함수를 호출합니다.
+            $("#news-slider5").on("click", "div.post-box", function(){
+                alert($(this).attr('val'));
+            });
+
+            show_list();
+        })
+
+        function show_list() {
+            $('#news-slider5').empty();
+            $.ajax({
+                type: 'GET',
+                url: '/list',
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        //서버가 보내준 데이터 추출
+                        let lists = response['pub_list'];
+
+                        console.log(lists);
+                        //for문 돌면서 html 넣어주기
+                        for (let i = 0; i < lists.length; i++) {
+                            let list = lists[i];
+                            let title = list['title'];
+                            let img = list['img'];
+                            let addr = list['addr'];
+                            let tag = list['tag'];
+                            let tel = list['tel'];
+                            let rating = list['rating'];
+                            let main_tag1 = list['main_tag1'];
+                            let main_tag2 = list['main_tag2'];
+                            let open_days = list['open_days'];
+
+                            if(open_days != undefined) {
+                                open_days = open_days.join('<BR />').replace(/(\(.*\))/gi, '');
+                            }
+
+                            // HTML로 넣어줘야지!
+                            let tempHtml = `<div class="post-slide5">
+                                                <div class="post-box" val="${title}">
+                                                    <div class="post-img">
+                                                        <img src="${img}" alt="">
+    <!--                                                    <div class="category">HTML</div>-->
+                                                    </div>
+                                                    <div class="post-review">
+                                                        <div class="post-title"><a href="#">${title}</a></div>
+                                                        <div>
+                                                            <div class="post-description">
+                                                                <i class="fas fa-tag"></i> ${main_tag1}
+                                                            </div>
+                                                            <div class="point-description">
+                                                                ${addr}<br>
+                                                                ${tel}<br>
+                                                                <영업시간><br>
+                                                                ${open_days}
+                                                            </div>
+                                                        </div>
+                                                        <div class="post-bar">
+                                                            <span><i class="far fa-star"></i><a href="#">${rating}</a></span>
+                                                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">2 Comments</a></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`
+                            $('#news-slider5').append(tempHtml);
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+
+    <style>
+
+    </style>
+
+
+
+
+</head>
+<body>
+<main class="pg-main">
+    <header class="main-header">
+        <div class="title">내 맘대로, 내가 원하는 나만의 술집을 찾아줘!</div>
+        <div class="main-title">Pub Street</div>
+        <div class="search-container h-100">
+            <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Search...">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </header>
+</main>
+
+<section class="search-sec">
+    <div id="search-bar" class="container">
+        <form action="#" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-slt" id="select1">
+                                <option>--지역 선택--</option>
+                                <option>종로/중구/용산</option>
+                                <option>도봉/강북/성북/노원</option>
+                                <option>동대문/중랑/성동/광진</option>
+                                <option>강동/송파/서초/강남</option>
+                                <option>동작/관악/금천</option>
+                                <option>강서/양천/영등포/구로</option>
+                                <option>은평/마포/서대문</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-slt" id="select2">
+                                <option>--주종 선택--</option>
+                                <option>소주</option>
+                                <option>맥주</option>
+                                <option>막걸리</option>
+                                <option>와인</option>
+                                <option>위스키</option>
+                                <option>칵테일</option>
+                                <option>사케</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select class="form-control search-slt" id="select3">
+                                <option>--테마--</option>
+                                <option>데이트</option>
+                                <option>친구</option>
+                                <option>가족</option>
+                                <option>회식</option>
+                                <option>기념일</option>
+                                <option>혼술</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</div>
+
+<div class="box-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="news-slider5" class="owl-carousel">
+            <!--
+                상품리스트
+            -->
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+</body>
+</html>

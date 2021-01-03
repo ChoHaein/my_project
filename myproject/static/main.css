@@ -1,0 +1,259 @@
+* {
+    font-family: 'Poor Story', cursive;
+}`
+header {
+    background-color: green;
+    width : 100%;
+    height : 350px;
+    color: white;
+    text-align: center;
+
+    background-image: url('https://www.visitmelbourne.com/-/media/images/melbourne/food-and-wine/bars/f-j/ines-bar_mel_r_supplied_1600x900.jpg?ts=20180517000426');
+    background-size: auto;
+    background-position: center;
+
+    padding-top: 40px;
+}
+
+.title {
+    font-size: 30px;
+    margin-top: 20px;
+    backface-visibility: visible;
+}
+
+.main-title {
+    font-size: 70px; font-weight: bold;
+}
+
+/*.form-control-borderless {*/
+/*    border: none;*/
+/*}*/
+
+/*.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    box-shadow: none;*/
+/*}*/
+
+.search-sec{
+    padding: 2rem;
+    background-color: #f1f1f2;
+}
+
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f1f1f2 !important;
+}
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    font-color: blakc;
+}
+
+.search_input{
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    color: #333333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 400px;
+    caret-color:red;
+    /*transition: width 0.4s linear;*/
+}
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+}
+
+body{background-color:#f1f1f2 !important;}
+h3.h3{text-align:center;padding:1.5em 0em;text-transform:capitalize;font-size:1.5em;}
+
+/******************  News Slider Demo-5 *******************/
+.post-slide5{
+    margin: auto 10px auto 20px;
+    margin-left: 50px;
+    transition: all 0.4s ease-in-out 0s;
+    box-shadow: 0 1px 2px rgba(43,59,93,0.30);
+    margin-bottom:2em;
+    width: 350px;
+    float: left;
+}
+.post-slide5 .post-img{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-box {
+    cursor:pointer;
+}
+/*.post-slide5 .post-img:before{*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 300px;*/
+/*    !*object-fit: cover;*!*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background: rgba(0, 0, 0, 0);*/
+/*    transition: all 0.4s linear 0s;*/
+
+/*}*/
+.post-slide5:hover .post-img:before{
+    background: rgba(0, 0, 0, 0.6);
+}
+.post-slide5 .post-img img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.post-slide5 .category {
+    width: 20%;
+    font-size: 16px;
+    color: #fff;
+    line-height: 11px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 11px 0;
+    background: #ff9412;
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    transition: all 0.5s ease-in-out 0s;
+}
+.post-slide5:hover .category{
+    left: 0;
+}
+.post-slide5 .post-review{
+    padding: 25px 20px;
+    background: #fff;
+    position: relative;
+    height: 350px;
+}
+.post-slide5 .post-title{
+    margin: 0;
+}
+.post-slide5 .post-title a{
+    display: inline-block;
+    font-size: 20px;
+    color: #ff9412;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    transition: all 0.30s linear 0s;
+}
+.post-slide5 .post-title a:hover{
+    text-decoration: none;
+    color: #555;
+}
+.post-slide5 .post-description{
+    font-size: 15px;
+    color: #555;
+    line-height: 26px;
+    /*height: 300px;*/
+}
+
+.point-description {
+    font-size: 16px;
+    font-weight: bold;
+    height: 150px;
+}
+
+.post-review .post-bar{
+    margin-top: 20px;
+}
+.post-bar span{
+    display: inline-block;
+    font-size: 14px;
+}
+.post-bar span i{
+    margin-right: 5px;
+    color: #999;
+}
+.post-bar span a{
+    color: #999;
+    text-transform: uppercase;
+}
+.post-bar span a:hover{
+    text-decoration: none;
+    color: #ff9412;
+}
+.post-bar span.comments{
+    float: right;
+}
+@media only screen and (max-width: 359px) {
+    .post-slide5 .category{ font-size: 13px; }
+}
+
+.owl-carousel {
+    width: 100%;
+}
+
+/*search bar*/
+.search-container {
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.searchbar {
+    background-color: white;
+    opacity: 70%;
+}
+
+.search_icon {
+    color: #333333;
+}
