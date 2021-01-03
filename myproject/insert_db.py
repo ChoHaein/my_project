@@ -65,7 +65,7 @@ def get_detail_urls(page=1):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     params = {
-                'query' : '서울+종로+술집',
+                'query' : '서울+도봉+술집',
                 'page' : page
             }
     data = requests.get('https://www.diningcode.com/list.php', headers=headers, params=params)
